@@ -4,7 +4,13 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Representa uma tarefa no sistema TaskFlow
+ * Representa uma tarefa no sistema TaskFlow.
+ * Cada tarefa possui identificador unico, titulo, descricao,
+ * prioridade, categoria e status que reflete sua posicao no Kanban.
+ *
+ * @author Hadassa Ester
+ * @version 1.0
+ * @since 2025-12-08
  */
 public class Tarefa {
     private static int contadorId = 1;
