@@ -105,17 +105,26 @@ public class ServicoTarefa {
         int emProgresso = listarPorStatus(StatusTarefa.EM_PROGRESSO).size();
         int concluidas = listarPorStatus(StatusTarefa.CONCLUIDO).size();
 
+        int alta = listarPorPrioridade(Prioridade.ALTA).size();
+        int media = listarPorPrioridade(Prioridade.MEDIA).size();
+        int baixa = listarPorPrioridade(Prioridade.BAIXA).size();
+
         StringBuilder stats = new StringBuilder();
         stats.append("\nEstatisticas do Projeto:\n");
-        stats.append("------------------------\n");
-        stats.append("Total de tarefas: ").append(total).append("\n");
-        stats.append("A Fazer: ").append(aFazer).append("\n");
-        stats.append("Em Progresso: ").append(emProgresso).append("\n");
-        stats.append("Concluidas: ").append(concluidas).append("\n");
+        stats.append("========================\n");
+        stats.append("Total de tarefas: ").append(total).append("\n\n");
+        stats.append("Por Status:\n");
+        stats.append("  A Fazer: ").append(aFazer).append("\n");
+        stats.append("  Em Progresso: ").append(emProgresso).append("\n");
+        stats.append("  Concluidas: ").append(concluidas).append("\n\n");
+        stats.append("Por Prioridade:\n");
+        stats.append("  Alta: ").append(alta).append("\n");
+        stats.append("  Media: ").append(media).append("\n");
+        stats.append("  Baixa: ").append(baixa).append("\n");
 
         if (total > 0) {
             int percentualConclusao = (concluidas * 100) / total;
-            stats.append("Taxa de conclusao: ").append(percentualConclusao).append("%\n");
+            stats.append("\nTaxa de conclusao: ").append(percentualConclusao).append("%\n");
         }
 
         return stats.toString();
