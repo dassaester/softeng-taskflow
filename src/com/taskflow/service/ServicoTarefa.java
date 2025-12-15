@@ -21,7 +21,10 @@ public class ServicoTarefa {
     // CREATE
     public Tarefa criarTarefa(String titulo, String descricao, Prioridade prioridade, String categoria) {
         if (titulo == null || titulo.trim().isEmpty()) {
-            throw new IllegalArgumentException("Titulo nao pode ser vazio");
+            throw new IllegalArgumentException("Erro: O titulo da tarefa e obrigatorio e nao pode estar vazio.");
+        }
+        if (descricao == null || descricao.trim().isEmpty()) {
+            throw new IllegalArgumentException("Erro: A descricao da tarefa e obrigatoria.");
         }
 
         Tarefa tarefa = new Tarefa(titulo, descricao, prioridade, categoria);
