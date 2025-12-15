@@ -24,10 +24,14 @@ O projeto utiliza a metodologia **Kanban** com as seguintes colunas:
 
 ## Tecnologias
 
-- Java 21
-- IntelliJ IDEA
-- Git & GitHub
-- GitHub Actions (para CI/CD)
+- **Linguagem:** Java 21 (OpenJDK Temurin)
+- **IDE:** IntelliJ IDEA 2025.3 Ultimate
+- **Controle de Versão:** Git 2.51.2
+- **Plataforma:** GitHub
+- **CI/CD:** GitHub Actions
+- **Testes:** JUnit (em implementação)
+- **Build:** IntelliJ Build System
+
 
 ## Estrutura do Projeto
 ```
