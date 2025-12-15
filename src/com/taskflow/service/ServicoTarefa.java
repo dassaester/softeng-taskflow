@@ -48,6 +48,11 @@ public class ServicoTarefa {
                 .filter(t -> t.getCategoria().equalsIgnoreCase(categoria))
                 .collect(Collectors.toList());
     }
+    public List<Tarefa> listarPorPrioridade(Prioridade prioridade) {
+        return tarefas.stream()
+                .filter(t -> t.getPrioridade() == prioridade)
+                .collect(Collectors.toList());
+    }
 
     public Tarefa buscarPorId(int id) {
         return tarefas.stream()
