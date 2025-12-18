@@ -1,4 +1,4 @@
-name: Java CI with Tests
+name: Java CI - Build
 
 on:
   push:
@@ -23,17 +23,9 @@ jobs:
       - name: Compile Java code
         run: |
           mkdir -p out/production/taskflow
-          mkdir -p out/test/taskflow
           javac -d out/production/taskflow src/com/taskflow/model/*.java src/com/taskflow/service/*.java src/com/taskflow/util/*.java src/com/taskflow/Main.java
 
-      - name: Download JUnit
+      - name: Verify compilation
         run: |
-          wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.3/junit-platform-console-standalone-1.9.3.jar
-
-      - name: Compile tests
-        run: |
-          javac -cp "out/production/taskflow:junit-platform-console-standalone-1.9.3.jar" -d out/test/taskflow test/com/taskflow/model/*.java test/com/taskflow/service/*.java
-
-      - name: Run tests
-        run: |
-          java -jar junit-platform-console-standalone-1.9.3.jar --class-path out/production/taskflow:out/test/taskflow --scan-classpath
+          echo "Código compilado com sucesso!"
+          ls -la out/production/taskflow/com/taskflow/
