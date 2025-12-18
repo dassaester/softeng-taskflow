@@ -83,3 +83,9 @@ Durante o desenvolvimento, foi implementada a funcionalidade de **categorizaçã
 ## Referência
 
 Desenvolvido como projeto acadêmico para a disciplina de Engenharia de Software - UniFECAF
+
+## Contato
+
+Para dúvidas ou sugestões sobre este projeto:
+- GitHub: [@dassaester](https://github.com/dassaester)
+- Repositório: [softeng-taskflow](https://github.com/dassaester/softeng-taskflow)
