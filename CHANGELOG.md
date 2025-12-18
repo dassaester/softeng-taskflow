@@ -30,4 +30,3 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 - Validações aprimoradas
 - Estatísticas mais detalhadas com filtro por prioridade
 - Documentação expandida
-```
