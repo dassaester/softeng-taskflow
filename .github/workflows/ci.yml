@@ -1,0 +1,39 @@
+name: Java CI with Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Compile Java code
+        run: |
+          mkdir -p out/production/taskflow
+          mkdir -p out/test/taskflow
+          javac -d out/production/taskflow src/com/taskflow/model/*.java src/com/taskflow/service/*.java src/com/taskflow/util/*.java src/com/taskflow/Main.java
+
+      - name: Download JUnit
+        run: |
+          wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.3/junit-platform-console-standalone-1.9.3.jar
+
+      - name: Compile tests
+        run: |
+          javac -cp "out/production/taskflow:junit-platform-console-standalone-1.9.3.jar" -d out/test/taskflow test/com/taskflow/model/*.java test/com/taskflow/service/*.java
+
+      - name: Run tests
+        run: |
+          java -jar junit-platform-console-standalone-1.9.3.jar --class-path out/production/taskflow:out/test/taskflow --scan-classpath
