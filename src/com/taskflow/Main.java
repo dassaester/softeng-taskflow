@@ -72,18 +72,21 @@ public class Main {
     }
 
     private static void exibirMenu() {
-        System.out.println("\n=== Menu Principal ===");
-        System.out.println("1. Criar nova tarefa");
-        System.out.println("2. Listar todas as tarefas");
-        System.out.println("3. Listar tarefas por status");
-        System.out.println("4. Listar tarefas por categoria");
-        System.out.println("5. Atualizar status da tarefa");
-        System.out.println("6. Atualizar detalhes da tarefa");
-        System.out.println("7. Deletar tarefa");
-        System.out.println("8. Visualizar quadro Kanban");
-        System.out.println("9. Ver estatisticas");
-        System.out.println("0. Sair");
-        System.out.print("\nSelecione uma opcao: ");
+        System.out.println("\n==========================================");
+        System.out.println("           MENU PRINCIPAL");
+        System.out.println("==========================================");
+        System.out.println("  1. Criar nova tarefa");
+        System.out.println("  2. Listar todas as tarefas");
+        System.out.println("  3. Listar tarefas por status");
+        System.out.println("  4. Listar tarefas por categoria");
+        System.out.println("  5. Atualizar status da tarefa");
+        System.out.println("  6. Atualizar detalhes da tarefa");
+        System.out.println("  7. Deletar tarefa");
+        System.out.println("  8. Visualizar quadro Kanban");
+        System.out.println("  9. Ver estatisticas");
+        System.out.println("  0. Sair");
+        System.out.println("==========================================");
+        System.out.print("Selecione uma opcao: ");
     }
 
     private static int lerOpcao() {
