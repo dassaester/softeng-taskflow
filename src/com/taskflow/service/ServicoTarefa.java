@@ -26,6 +26,9 @@ public class ServicoTarefa {
         if (descricao == null || descricao.trim().isEmpty()) {
             throw new IllegalArgumentException("Erro: A descricao da tarefa e obrigatoria.");
         }
+        if (categoria == null || categoria.trim().isEmpty()) {
+            throw new IllegalArgumentException("Erro: A categoria da tarefa e obrigatoria.");
+        }
 
         Tarefa tarefa = new Tarefa(titulo, descricao, prioridade, categoria);
         tarefas.add(tarefa);
